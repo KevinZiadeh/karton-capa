@@ -13,9 +13,13 @@ class Capa(Karton):
     """
     Perform CAPA on samples.
 
+    For a given sample, run **CAPA** on it and:
+    1. Add the detected *TTPs* to the sample as **tags**
+    2. Extract specific fields from the response and add them to the sample as **attributes**
+
     **Consumes:**
     ```
-    {"type": "sample", "stage": "recognized"}
+    {"type": "sample", "stage": "recognized", "kind": "runnable"}
     ```
 
     **Produces:**
@@ -35,7 +39,7 @@ class Capa(Karton):
 
     identity = "karton.capa"
     filters: ClassVar = [
-        {"type": "sample", "stage": "recognized"},
+        {"type": "sample", "stage": "recognized", "kind": "runnable"},
     ]
     version = __version__
 

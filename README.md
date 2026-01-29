@@ -39,7 +39,7 @@ For a given sample, run **CAPA** on it and:
 
 **Consumes:**
 ```json
-{"type": "sample", "stage": "recognized"}
+{"type": "sample", "stage": "recognized", "kind": "runnable"}
 ```
 
 **Produces:**
@@ -60,9 +60,10 @@ For a given sample, run **CAPA** on it and:
 
 **Key.** `capa`
 
-**Label.** CAPA result
+**Label.** CAPA results
 
-**Description.** Minified result of running CAPA on the sample
+**Description.** capa detects capabilities in executable files. You run it against a PE, ELF, .NET module, shellcode file, or a sandbox report and it tells you what it thinks the program can do. For example, it might suggest that the file is a backdoor, is capable of installing services, or relies on HTTP to communicate.
+
 ```jinja
 <!-- Rich Template -->
 
